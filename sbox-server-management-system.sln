@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F1CB678-C2FD-4EC5-8AAE-04050A4A832F}"
 	ProjectSection(SolutionItems) = preProject
-		.gitkeep = .gitkeep
+		.qwe = .qwe
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{59FE5FC6-B4CF-450E-9881-A1FE779A5BEE}"
