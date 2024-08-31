@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "trr", "trr", "{2E7FA6C5-943
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qwe", "tests\trr\qwe\qwe.csproj", "{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vv3", "vv3\vv3.csproj", "{AC99B81B-2129-41CD-B3C1-D61751BA0F34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,6 +37,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2E7FA6C5-9437-4977-BFED-22E44BE6F6A2} = {59FE5FC6-B4CF-450E-9881-A1FE779A5BEE}
 		{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1} = {2E7FA6C5-9437-4977-BFED-22E44BE6F6A2}
+		{AC99B81B-2129-41CD-B3C1-D61751BA0F34} = {6F1CB678-C2FD-4EC5-8AAE-04050A4A832F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {482B5CF2-7D3C-4F80-B380-B0DE1F085D03}
