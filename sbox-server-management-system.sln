@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qwe", "tests\trr\qwe\qwe.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vv3", "vv3\vv3.csproj", "{AC99B81B-2129-41CD-B3C1-D61751BA0F34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppppp", "pr\ppppp\ppppp.csproj", "{B55C75AD-D0ED-4850-8331-CC696F7EF686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC99B81B-2129-41CD-B3C1-D61751BA0F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55C75AD-D0ED-4850-8331-CC696F7EF686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55C75AD-D0ED-4850-8331-CC696F7EF686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55C75AD-D0ED-4850-8331-CC696F7EF686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55C75AD-D0ED-4850-8331-CC696F7EF686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 		{2E7FA6C5-9437-4977-BFED-22E44BE6F6A2} = {59FE5FC6-B4CF-450E-9881-A1FE779A5BEE}
 		{4ACCDFB7-4DF8-44EC-8491-C4ACE8C813E1} = {2E7FA6C5-9437-4977-BFED-22E44BE6F6A2}
 		{AC99B81B-2129-41CD-B3C1-D61751BA0F34} = {6F1CB678-C2FD-4EC5-8AAE-04050A4A832F}
+		{B55C75AD-D0ED-4850-8331-CC696F7EF686} = {6F1CB678-C2FD-4EC5-8AAE-04050A4A832F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {482B5CF2-7D3C-4F80-B380-B0DE1F085D03}
