@@ -1,4 +1,10 @@
 
+using Microsoft.Extensions.Configuration;
+using Infrastructure.Logging.Extensions;
+using Infrastructure.Monitoring.Extensions;
+using Infrastructure.Messaging.EventBus;
+using Infrastructure.Messaging.Extensions;
+
 namespace AdminService.Api
 {
     public class Program
@@ -7,7 +13,16 @@ namespace AdminService.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            var config = builder.Configuration;
+            
+            builder.Services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddSerilogLogging(config);
+            });
+
+            builder.Services.AddMonitoring(config);
+
+            builder.Services.AddEventBus(config);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -25,10 +40,19 @@ namespace AdminService.Api
 
             app.UseHttpsRedirection();
 
+            app.UsePrometheusMetrics();
+
+            app.UseRouting();
+
             app.UseAuthorization();
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
+            });
 
-            app.MapControllers();
+            var eventBus = app.Services.GetRequiredService<IEventBus>();
 
             app.Run();
         }

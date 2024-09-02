@@ -8,8 +8,10 @@ services:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     ports:
       - "9200:9200"
+    volumes:
+    - elasticsearch-data:/usr/share/elasticsearch/data
     networks:
-      - elk
+      - app-network
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.13.2
@@ -19,7 +21,7 @@ services:
     ports:
       - "5601:5601"
     networks:
-      - elk
+      - app-network
     depends_on:
       - elasticsearch
 
@@ -31,7 +33,7 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - elk
+      - app-network
     depends_on:
       - elasticsearch
 
@@ -43,7 +45,7 @@ services:
     ports:
       - "9090:9090"
     networks:
-      - monitoring
+      - app-network
 
   grafana:
     image: grafana/grafana
@@ -55,7 +57,7 @@ services:
     networks:
       - monitoring
     depends_on:
-      - prometheus
+      - app-network
 
   rabbitmq:
     container_name: rabbitmq
@@ -153,3 +155,6 @@ networks:
     driver: bridge
   app-network:
     driver: bridge
+
+volumes:
+  elasticsearch-data:
