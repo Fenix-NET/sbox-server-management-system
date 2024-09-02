@@ -1,0 +1,84 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/character/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "character-service:80",
+      "UpstreamPathTemplate": "/character/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/inventory/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "inventory-service:80",
+      "UpstreamPathTemplate": "/inventory/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/admin/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "admin-service:80",
+      "UpstreamPathTemplate": "/admin/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/economy/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "economy-service:80",
+      "UpstreamPathTemplate": "/economy/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/event/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "event-service:80",
+      "UpstreamPathTemplate": "/event/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/notification/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "notification-service:80",
+      "UpstreamPathTemplate": "/notification/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/professional/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "professional-service:80",
+      "UpstreamPathTemplate": "/professional/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/quest/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "quest-service:80",
+      "UpstreamPathTemplate": "/quest/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/shop/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "shop-service:80",
+      "UpstreamPathTemplate": "/shop/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/social/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPort": "social-service:80",
+      "UpstreamPathTemplate": "/social/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}
+//Routes`**: Определяет маршруты для каждого микросервиса.
+//DownstreamPathTemplate`**: Путь на стороне микросервиса, куда будет направлен запрос.
+//DownstreamScheme`**: Протокол (HTTP или HTTPS).
+//DownstreamHostAndPort`**: Хост и порт микросервиса.
+//UpstreamPathTemplate`**: Внешний путь, по которому будет доступен микросервис через API Gateway.
+//UpstreamHttpMethod`**: HTTP-методы, которые будут поддерживаться для этого маршрута.
+//GlobalConfiguration`**: Глобальная конфигурация для Ocelot, например, базовый URL для API Gateway.
