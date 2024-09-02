@@ -10,7 +10,9 @@ namespace Infrastructure.Logging
         {
             var elasticUri = configuration["ElasticConfiguration:Uri"];
 
-            loggerConfiguration
+            if (!string.IsNullOrEmpty(elasticUri))
+            {
+                loggerConfiguration
                 .Enrich.FromLogContext()
                 .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticUri))
                 {
@@ -21,6 +23,7 @@ namespace Infrastructure.Logging
                 })
                 .Enrich.WithProperty("Environment", configuration["Environment"])
                 .ReadFrom.Configuration(configuration);
+            }
         }
     }
 }

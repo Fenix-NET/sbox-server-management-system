@@ -1,6 +1,0 @@
-@ProfessionalService.Api_HostAddress = http://localhost:5101
-
-GET {{ProfessionalService.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

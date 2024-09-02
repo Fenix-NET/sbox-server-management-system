@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "adminservice.api": "StartDebugging",
+        "characterservice.api": "StartDebugging",
+        "economyservice.api": "StartDebugging",
+        "eventservice.api": "StartDebugging",
+        "inventoryservice.api": "StartDebugging",
+        "notificationservice.api": "StartDebugging",
+        "professionalservice.api": "StartDebugging",
+        "questservice.api": "StartDebugging",
+        "shopservice.api": "StartDebugging",
+        "socialservice.api": "StartDebugging"
+      }
+    }
+  }
+}

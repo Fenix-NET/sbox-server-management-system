@@ -1,6 +1,0 @@
-@EconomyService.Api_HostAddress = http://localhost:5031
-
-GET {{EconomyService.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

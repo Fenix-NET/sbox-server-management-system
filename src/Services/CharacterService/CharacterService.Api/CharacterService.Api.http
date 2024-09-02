@@ -1,6 +1,0 @@
-@CharacterService.Api_HostAddress = http://localhost:5032
-
-GET {{CharacterService.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

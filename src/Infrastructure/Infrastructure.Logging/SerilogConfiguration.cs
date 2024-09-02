@@ -12,6 +12,7 @@ public class SerilogConfiguration
         var loggerConfiguration = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)
             .Enrich.FromLogContext()
+            .Enrich.FromLogContext()
             .WriteTo.Console();
 
         ELKLogging.ConfigureElkLogging(loggerConfiguration, configuration);

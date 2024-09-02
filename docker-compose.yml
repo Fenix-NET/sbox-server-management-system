@@ -1,0 +1,155 @@
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.13.2
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.13.2
+    container_name: logstash
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5000:5000"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - app-network
+
+  adminservice.api:
+    image: ${DOCKER_REGISTRY-}adminserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/AdminService/AdminService.Api/Dockerfile
+    networks:
+      - app-network
+
+  characterservice.api:
+    image: ${DOCKER_REGISTRY-}characterserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/CharacterService/CharacterService.Api/Dockerfile
+    networks:
+      - app-network
+
+  economyservice.api:
+    image: ${DOCKER_REGISTRY-}economyserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/EconomyService/EconomyService.Api/Dockerfile
+    networks:
+      - app-network
+
+  eventservice.api:
+    image: ${DOCKER_REGISTRY-}eventserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/EventService/EventService.Api/Dockerfile
+    networks:
+      - app-network
+
+  inventoryservice.api:
+    image: ${DOCKER_REGISTRY-}inventoryserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/InventoryService/InventoryService.Api/Dockerfile
+    networks:
+      - app-network
+
+  notificationservice.api:
+    image: ${DOCKER_REGISTRY-}notificationserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/NotificationService/NotificationService.Api/Dockerfile
+    networks:
+      - app-network
+
+  professionalservice.api:
+    image: ${DOCKER_REGISTRY-}professionalserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/ProfessionalService/ProfessionalService.Api/Dockerfile
+    networks:
+      - app-network
+
+  questservice.api:
+    image: ${DOCKER_REGISTRY-}questserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/QuestService/QuestService.Api/Dockerfile
+    networks:
+      - app-network
+
+  shopservice.api:
+    image: ${DOCKER_REGISTRY-}shopserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/ShopService/ShopService.Api/Dockerfile
+    networks:
+      - app-network
+
+  socialservice.api:
+    image: ${DOCKER_REGISTRY-}socialserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/SocialService/SocialService.Api/Dockerfile
+    networks:
+      - app-network
+
+networks:
+  elk:
+    driver: bridge
+  monitoring:
+    driver: bridge
+  app-network:
+    driver: bridge
