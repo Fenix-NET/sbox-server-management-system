@@ -14,4 +14,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Logging\Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Messaging\Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Monitoring\Infrastructure.Monitoring.csproj" />
+    <ProjectReference Include="..\ProfessionalService.Application\ProfessionalService.Application.csproj" />
+    <ProjectReference Include="..\ProfessionalService.Core\ProfessionalService.Core.csproj" />
+    <ProjectReference Include="..\ProfessionalService.Infrastructure\ProfessionalService.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

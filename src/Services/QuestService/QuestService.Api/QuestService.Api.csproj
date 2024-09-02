@@ -14,4 +14,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Logging\Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Messaging\Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.Monitoring\Infrastructure.Monitoring.csproj" />
+    <ProjectReference Include="..\QuestService.Application\QuestService.Application.csproj" />
+    <ProjectReference Include="..\QuestService.Core\QuestService.Core.csproj" />
+    <ProjectReference Include="..\QuestService.Infrastructure\QuestService.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

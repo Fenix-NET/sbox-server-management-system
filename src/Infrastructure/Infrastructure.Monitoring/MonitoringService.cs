@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Monitoring
+﻿using Microsoft.AspNetCore.Builder;
+
+namespace Infrastructure.Monitoring
 {
     public class MonitoringService
     {

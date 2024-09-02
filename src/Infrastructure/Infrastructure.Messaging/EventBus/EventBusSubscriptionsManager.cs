@@ -3,7 +3,9 @@ using Infrastructure.Messaging.EventBus.IntegrationEvents;
 using Infrastructure.Messaging.Interfaces;
 
 namespace Infrastructure.Messaging.EventBus;
-
+/// <summary>
+/// Отвечает за управление подписками на события.
+/// </summary>
 public class EventBusSubscriptionsManager : IEventBusSubscriptionsManager
 {
     

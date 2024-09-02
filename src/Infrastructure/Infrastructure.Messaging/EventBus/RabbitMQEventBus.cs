@@ -34,7 +34,7 @@ public class RabbitMQEventBus : IEventBus, IDisposable
     /// <summary>
     /// Публикует событие в RabbitMQ.
     /// </summary>
-    /// <param name="event"></param>
+    /// <param name="event">Название типа события</param>
     public void Publish(IntegrationEvent @event)
     {
         if (!_persistentConnection.IsConnected)
@@ -59,8 +59,8 @@ public class RabbitMQEventBus : IEventBus, IDisposable
     /// <summary>
     /// Подписывает обработчик на событие и создает привязку очереди к этому событию.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TH"></typeparam>
+    /// <typeparam name="T">Имя события</typeparam>
+    /// <typeparam name="TH">Обработчик события</typeparam>
     public void Subscribe<T, TH>()
         where T : IntegrationEvent
         where TH : IIntegrationEventHandler<T>
@@ -95,8 +95,8 @@ public class RabbitMQEventBus : IEventBus, IDisposable
     /// <summary>
     /// Отписывает обработчик от события и удаляет привязку.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TH"></typeparam>
+    /// <typeparam name="T">Имя события</typeparam>
+    /// <typeparam name="TH">Обработчик события</typeparam>
     public void Unsubscribe<T, TH>()
         where T : IntegrationEvent
         where TH : IIntegrationEventHandler<T>
