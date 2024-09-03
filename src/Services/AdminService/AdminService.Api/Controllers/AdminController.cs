@@ -17,18 +17,21 @@ namespace AdminService.Api.Controllers
         [HttpGet(Name = "getalladmins")]
         public async Task<IActionResult> GetAllAdmins()
         {
+            _logger.LogInformation("GetAllAdmins");
             return Ok();
         }
 
         [HttpGet(Name = "getplayerinfo/{id}")]
         public async Task<IActionResult> GetPlayerInfo(int id)
         {
+            _logger.LogInformation($"GetPlayerInfo-id:{id}");
             return Ok();
         }
 
         [HttpGet(Name = "getallbannedplayers")]
         public async Task<IActionResult> GetAllBannedPlayers()
         {
+            _logger.LogInformation("GetAllBannedPlayers");
             return Ok();
         }
     }

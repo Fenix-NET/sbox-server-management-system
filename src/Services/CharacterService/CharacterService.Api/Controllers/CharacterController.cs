@@ -17,8 +17,14 @@ namespace CharacterService.Api.Controllers
         [HttpGet(Name = "getinfo/{id}")]
         public async Task<IActionResult> GetCharacterInfo(int id)
         {
+            _logger.LogInformation($"GetCharacterInfo-id:{id}");
             return Ok();
         }
-
+        [HttpPost(Name = "createcharacter")]
+        public async Task<IActionResult> CreateCharacter(int id)
+        {
+            _logger.LogInformation($"CreateCharacter-id:{id}");
+            return Ok();
+        }
     }
 }
